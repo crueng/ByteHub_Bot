@@ -1,0 +1,21 @@
+client:
+  prefix: "!"
+  owners: []
+  status: online
+  activity:
+    type: watching
+    text: the ByteHub server
+
+logging:
+  level: INFO
+  discord_level: WARNING
+  file:
+    name: bytehub.log
+    max_megabytes: 5
+    backups: 5
+
+database:
+  name: bytehub.db
+
+features:
+  disabled: []
