@@ -1,0 +1,11 @@
+{
+    "include": ["ByteHub", "tests"],
+    "exclude": ["**/__pycache__", ".venv", "data", "logs"],
+    "venvPath": ".",
+    "venv": ".venv",
+    "pythonVersion": "3.13",
+    "pythonPlatform": "All",
+    "typeCheckingMode": "strict",
+    "reportUnnecessaryTypeIgnoreComment": "error",
+    "reportImplicitOverride": "error"
+}
