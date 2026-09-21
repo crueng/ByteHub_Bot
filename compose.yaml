@@ -1,0 +1,23 @@
+services:
+  bytehub:
+    build: .
+    image: bytehub
+    container_name: bytehub
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 30s
+    env_file: .env
+    volumes:
+      - code:/app
+      - data:/data
+      - logs:/logs
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  code:
+  data:
+  logs:
