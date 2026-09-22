@@ -9,6 +9,7 @@ from pathlib import Path
 
 from ..errors.client import IntentsRefused, LoginRefused
 from ..storage.migrations import Migrations
+from listeners.lifecycle import Lifecycle
 from ..storage.database import Database
 from ..settings.paths import Paths
 from .presence import Presence
@@ -45,6 +46,8 @@ class Client(commands.AutoShardedBot):
 
     @override
     async def setup_hook(self) -> None:
+        await self.add_cog(Lifecycle(self))
+
         await self.database.connect()
 
         version = await self.migrations.apply()
